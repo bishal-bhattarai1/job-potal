@@ -5,11 +5,11 @@ const ApplicantDashboardCard = ({ applicant, position, time }) => {
       <div className="flex items-center space-x-4">
         <div className="h-10 w-10 bg-gradient-to-br from-indigo-400 to-indigo-500 rounded-xl flex items-center justify-center">
           <span className="text-white font-medium text-sm">
-            {applicant.name
-              .split(" ")
-              .map((n) => n[0])
-              .join("")}
-          </span>
+  {applicant?.name
+    ? applicant.name.split(" ").map((n) => n[0]).join("")
+    : "?"}
+</span>
+
         </div>
         <div>
           <h4 className="text-[15px] font-medium text-gray-900">

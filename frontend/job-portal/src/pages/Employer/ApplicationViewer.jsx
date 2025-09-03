@@ -184,29 +184,29 @@ const ApplicationViewer = () => {
                             <div className="flex items-center gap-4">
                               {/* Avatar */}
                               <div className="flex-shrink-0">
-                                {application.applicant.avatar ? (
-                                  <img
-                                    src={application.applicant.avatar}
-                                    alt={application.applicant.name}
-                                    className="h-12 w-12 rounded-full object-cover"
-                                  />
-                                ) : (
-                                  <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center">
-                                    <span className="text-blue-600 font-semibold">
-                                      {getInitials(application.applicant.name)}
-                                    </span>
-                                  </div>
-                                )}
+                               {application?.applicant?.avatar ? (
+  <img
+    src={application.applicant.avatar}
+    alt={application.applicant?.name || "Unknown"}
+    className="h-12 w-12 rounded-full object-cover"
+  />
+) : (
+  <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center">
+    <span className="text-blue-600 font-semibold">
+      {getInitials(application?.applicant?.name || "Unknown")}
+    </span>
+  </div>
+)}
                               </div>
 
                               {/* Applicant Info */}
                               <div className="min-w-0 flex-1">
-                                <h3 className="font-semibold text-gray-900">
-                                  {application.applicant.name}
-                                </h3>
-                                <p className="text-gray-600 text-sm">
-                                  {application.applicant.email}
-                                </p>
+                              <h3 className="font-semibold text-gray-900">
+  {application?.applicant?.name || "Unknown Applicant"}
+</h3>
+<p className="text-gray-600 text-sm">
+  {application?.applicant?.email || "No email provided"}
+</p>
                                 <div className="flex items-center gap-1 mt-1 text-gray-500 text-xs">
                                   <Calendar className="h-3 w-3" />
                                   <span>
