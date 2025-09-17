@@ -2,14 +2,14 @@ const Job = require("../models/Job");
 const User = require("../models/User");
 const Application = require("../models/Application");
 const SavedJob = require("../models/SavedJob");
-const transporter = require("../config/emailConfig");
 const { applicationStatusEmail } = require("../utils/emailTemplates");
+
 
 //
 // ---------------- JOB CONTROLLERS ----------------
 //
 
-// @desc    Create a new job (Employer only)
+// @desc    Create a new job (Employer only)e
 exports.createJob = async (req, res) => {
   try {
     if (req.user.role !== "employer") {
